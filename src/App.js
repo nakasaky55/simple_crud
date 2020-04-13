@@ -26,7 +26,7 @@ function App() {
       setTotal(response.total);
       if (filter && filter.length > 0) {
         const filterData = response.data.filter((item) => {
-          if (item.name === filter || item.position === filter) return true;
+          if (item.position === filter) return true;
           return false;
         });
         setData(filterData);
