@@ -25,12 +25,15 @@ function App() {
     if (response) {
       setTotal(response.total);
       if (filter && filter.length > 0) {
+        console.log(filter);
         const filterData = response.data.filter((item) => {
           if (item.position === filter) return true;
           return false;
         });
         setData(filterData);
-      } else setData(response.data);
+      } else if (filter === "") {
+        setData(response.data);
+      }
     } else {
       setData([]);
     }
